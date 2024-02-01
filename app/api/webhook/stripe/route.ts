@@ -44,7 +44,7 @@ export async function POST(req: Request) {
         currentPeriodEnd: subscription.current_period_end,
         status: subscription.status,
         planId: subscription.items.data[0].plan.id,
-        invterval: String(subscription.items.data[0].plan.interval),
+        interval: String(subscription.items.data[0].plan.interval),
       },
     });
   }
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         stripeSubscriptionId: subscription.id,
       },
       data: {
-        planId: subscription.items.data[0].price.id,
+        planId: subscription.items.data[0].plan.id,
         currentPeriodStart: subscription.current_period_start,
         currentPeriodEnd: subscription.current_period_end,
         status: subscription.status,
